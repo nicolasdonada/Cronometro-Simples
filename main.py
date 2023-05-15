@@ -26,7 +26,7 @@ global contador
 tempo = "00:00:00"
 rodar = False
 contador = -5
-limitador = 59
+limitador = 60
 
 #Função para contagem de iniciar o cronômetro
 def iniciar():
@@ -57,6 +57,14 @@ def iniciar():
                 contador = 0
                 m += 1
             
+            if m > limitador:
+                contador = 0 
+                h += 1
+
+            if s == limitador:
+                contador = 0
+                s = 00
+
             s = str(0)+str(s)
             m = str(0)+str(m)
             h = str(0)+str(h)
