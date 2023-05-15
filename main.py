@@ -1,6 +1,5 @@
 from tkinter import *
 import tkinter
-from time import sleep
 
 
 # cores
@@ -38,7 +37,7 @@ def iniciar():
     if rodar:
         #Iniciando o cronômetro
         if contador <= -1:
-            inicio = "Começando em " + str(contador)
+            inicio = "Começando em " + str(abs(contador))
             label_tempo["text"] = inicio
             label_tempo["font"] = "Arial 40"
 
@@ -57,9 +56,10 @@ def iniciar():
                 contador = 0
                 m += 1
             
-            if m > limitador:
+            if m > limitador - 1:
                 contador = 0 
                 h += 1
+                m = 0
 
             if s == limitador:
                 contador = 0
